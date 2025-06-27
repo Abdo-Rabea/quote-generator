@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Script -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+    <link rel="icon" type="image/svg" href="quote-svgrepo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Quote -->
+      <div class="quote">
+        <div class="text">
+          <i class="fa-solid fa-quote-left" style="color: #000000"></i>
+          <!-- *use span because it will not take any other space other than the text itself  -->
+          <span id="quote"> Looding... </span>
+        </div>
+        <!-- Author -->
+        <span class="author" id="author">Looding...</span>
+      </div>
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="twitter" id="twitter" title="Tweet This!">
+          <i class="fa-brands fa-twitter"></i>
+        </button>
+        <button id="new-quote">New Quote</button>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
