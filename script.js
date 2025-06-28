@@ -21,9 +21,8 @@ function removeLoadingSpinner() {
 
 async function getQuote() {
   try {
-    // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     showLoadingSpinner();
-    const proxyUrl = "";
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const apiUrl = "https://api.forismatic.com/api/1.0/";
     const response = await fetch(proxyUrl + apiUrl, {
       method: "POST",
@@ -38,8 +37,9 @@ async function getQuote() {
       }),
     });
     const quote = await response.json();
-
+    console.log(quote);
     setQuoteInElement(quote.quoteText, quote.quoteAuthor);
+
     removeLoadingSpinner();
   } catch (err) {
     getQuote();
