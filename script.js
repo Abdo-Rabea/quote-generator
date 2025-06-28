@@ -7,11 +7,11 @@ const twitterBtn = document.getElementById("twitter");
 const laoder = document.getElementById("loader");
 
 // functions
-function loading() {
+function showLoadingSpinner() {
   laoder.hidden = false;
   quoteContainer.hidden = true;
 }
-function finishLoading() {
+function removeLoadingSpinner() {
   // *just a guarding
   if (!laoder.hidden) {
     laoder.hidden = true;
@@ -22,7 +22,7 @@ function finishLoading() {
 async function getQuote() {
   try {
     // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    loading();
+    showLoadingSpinner();
     const proxyUrl = "";
     const apiUrl = "https://api.forismatic.com/api/1.0/";
     const response = await fetch(proxyUrl + apiUrl, {
@@ -38,13 +38,11 @@ async function getQuote() {
       }),
     });
     const quote = await response.json();
-    console.log(quote);
+
     setQuoteInElement(quote.quoteText, quote.quoteAuthor);
-    // stop loader and show the quote
-    finishLoading();
+    removeLoadingSpinner();
   } catch (err) {
     getQuote();
-    console.log("whoops!", err);
   }
 }
 
