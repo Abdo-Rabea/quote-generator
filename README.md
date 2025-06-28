@@ -56,9 +56,6 @@ Due to CORS limitations, a public CORS proxy (like `cors-anywhere.herokuapp.com`
 
 ### Screenshot
 
-*todo: Add a screenshot of your app here*
-
-```
-[Insert image link or drag screenshot into this README]
-```
-
+![page layout](assets/ui.png)
+![laader](assets/loader.png)
+![tweet](assets/tweet.png)
