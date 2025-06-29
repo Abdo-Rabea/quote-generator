@@ -36,13 +36,20 @@ async function getQuote() {
         lang: "en",
       }),
     });
+    if (response.status == 403) throw new Error("failed to fetch");
     const quote = await response.json();
     console.log(quote);
     setQuoteInElement(quote.quoteText, quote.quoteAuthor);
-
     removeLoadingSpinner();
-  } catch (err) {
-    getQuote();
+  } catch (error) {
+    if (error.message === "failed to fetch") {
+      window.alert(
+        "click request temporary access to the demo server and then reload this page"
+      );
+      window.open("https://cors-anywhere.herokuapp.com/corsdemo");
+    } else {
+      getQuote();
+    }
   }
 }
 
